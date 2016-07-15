@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+from sys import argv
+from getpass import getuser
+
+def me(user_input):
+    words = []
+    for word in user_input[1::]:
+        words.append(word)
+    sentence = ' '.join(str(word) for word in words)
+    return("* {0} {1}".format(getuser(), sentence))
+
+if __name__ == "__main__":
+    print(me(argv))

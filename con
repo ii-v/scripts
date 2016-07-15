@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# my version of the unix utility `cat`
+from sys import argv
+invalidInput = "Invalid input.\nUsage:\n\t{} [file]".format(argv[0])
+
+
+def con(file):
+    try:
+        file = open(file)
+        text = file.read()
+        print(text)
+        file.close
+    except:
+        print(invalidInput)
+
+if __name__ == "__main__":
+    try:
+        con(argv[1])
+    except:
+        print(invalidInput)
